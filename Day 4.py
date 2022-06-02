@@ -1,6 +1,7 @@
 #Rock Paper Scissor game
 
 import random
+from re import U
 
 rock = '''
     _______
@@ -37,14 +38,14 @@ if user_choice ==0:
     print(rock)
 elif user_choice==1:
     print(paper)
-else:
+elif user_choice == 2:
     print(scissors)
 print("\n \nComputer choice is :")
 if computer_choice ==0:
     print(rock)
 elif computer_choice==1:
     print(paper)
-else:
+elif computer_choice==2:
     print(scissors)
 
 #Brain of the game
@@ -56,5 +57,7 @@ elif(computer_choice == user_choice+1):
     print("Computer wins!")
 elif computer_choice==2 and user_choice==0:
     print("You win!")
-else:
+elif computer_choice==0 and user_choice==2:
     print("Computer wins!")
+else:
+    print("invalid input")
