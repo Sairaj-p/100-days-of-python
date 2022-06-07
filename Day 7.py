@@ -106,9 +106,7 @@ while count1 < len(word):
 
         if lives == 0:
             count1 = len(word)+1
-
-        for no in range(len(word)):
-            print(result[no])
+    print(f"{' '.join(result)}")
 if count1 == len(word):
     print("You won")
 else:
