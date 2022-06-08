@@ -26,6 +26,8 @@ def encode(msg,shift):
     cipher =""
     msg = list(msg)
     for i in range(len(msg)):
+        if msg[i] not in alphabet:
+            cipher += msg[i]
         for j in range(26):
             if msg [i] == alphabet[j]:
                 cipher += alphabet[j+shift]
@@ -37,6 +39,8 @@ def decode(msg,shift):
     cipher =""
     msg = list(msg)
     for i in range(len(msg)):
+        if msg[i] not in alphabet:
+            cipher += msg[i]
         for j in range(26,len(alphabet)):
             if msg [i] == alphabet[j]:
                 cipher += alphabet[j-shift]
