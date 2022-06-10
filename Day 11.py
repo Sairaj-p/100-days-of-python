@@ -4,21 +4,21 @@ import random
 
 #Materials
 logo = """
-.------.            _     _            _    _            _    
-|A_  _ |.          | |   | |          | |  (_)          | |   
-|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
-| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
-|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
-`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\ 
-      |  \/ K|                            _/ |                
-      `------'                           |__/           
+.------.            _     _            _     _            _    
+|A_  _ |           | |   | |          | |   (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | __ _  __ _  ___| | __
+| \  /|K /\  |     |  _ \| |/ _` |/ __| |/ /| |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   < | | (_| | (__|   < 
+`-----| \  / |     |____/|_|\__,_|\___|_|\_\| |\__,_|\___|_|\_\ 
+      |  \/ K|                             _/ |                
+      `------'                            |__/           
 """
 start_msg = """
-New Game Starts 
+_____________________ New Game Starts __________________________
 """
 card_heart = [1,2,3,4,5,6,7,8,9,10,10,10,10]
 card_spade = [1,2,3,4,5,6,7,8,9,10,10,10,10]
-card_clubs= [1,2,3,4,5,6,7,8,9,10,10,10,10]
+card_clubs = [1,2,3,4,5,6,7,8,9,10,10,10,10]
 card_diamond=[1,2,3,4,5,6,7,8,9,10,10,10,10]
 deck =[card_heart,card_diamond,card_clubs,card_spade]
 user_cards = []
@@ -43,7 +43,7 @@ def choiceofcards():
     if(dealer_card1 == 1):
         dealer_card1 = 11
     print(f"computer card is {dealer_card1}")
-    choice = input("Do you want to draw one more card? 'y' or 'n'").lower()
+    choice = input("Do you want to draw one more card? 'y' or 'n' :").lower()
     if choice == 'y':
         user_card3 = deck[random.randint(0,3)][random.randint(0,12)]
         user_cards.append(user_card3)
@@ -89,7 +89,7 @@ while amount>=100:
     print(f"Yours final hand is {user_cards}")
     print(f"Dealer final hand is {dealer_cards}")
     amount =winner(user_cards,dealer_cards,amount)
-    print(f"You have {amount}")
-
+    print(f"You have ${amount}")
+print("Game Over.")
 
 
