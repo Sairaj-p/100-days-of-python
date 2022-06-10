@@ -1,6 +1,7 @@
 #Blackjack Game
 import os
 import random
+
 #Materials
 logo = """
 .------.            _     _            _    _            _    
@@ -8,16 +9,19 @@ logo = """
 |( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
 | \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
 |  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
-`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\ 
       |  \/ K|                            _/ |                
       `------'                           |__/           
+"""
+start_msg = """
+New Game Starts 
 """
 card_heart = [1,2,3,4,5,6,7,8,9,10,10,10,10]
 card_spade = [1,2,3,4,5,6,7,8,9,10,10,10,10]
 card_clubs= [1,2,3,4,5,6,7,8,9,10,10,10,10]
 card_diamond=[1,2,3,4,5,6,7,8,9,10,10,10,10]
 deck =[card_heart,card_diamond,card_clubs,card_spade]
-user_cards =[]
+user_cards = []
 dealer_cards =[]
 
 
@@ -50,31 +54,42 @@ def choiceofcards():
     if dealer_card1+dealer_card2<17:
         dealer_card3 = deck[random.randint(0,3)][random.randint(0,12)]
         dealer_cards.append(dealer_card3)
-        cards = [user_cards,dealer_cards]
-        return cards
+       # cards = []
+    return user_cards ,dealer_cards
     
-def winner(user_cards,dealer_cards):
+def winner(user_cards,dealer_cards,amount):
     #Check all conditions to find a winner
     if sum(user_cards)>21:
         print("Dealer wins!")
-    if 11 in cards and  sum(dealer_cards)>21:
+        return amount-100
+    if 11 in dealer_cards and  sum(dealer_cards)>21:
         dealer_cards.remove(11)
         dealer_cards.append(1)
     if sum(user_cards)>sum(dealer_cards) or sum(dealer_cards)>21:
         print("You win!")
+        return amount+100
     elif sum(user_cards)<sum(dealer_cards):
         print("Dealer wins!")
+        return amount-100
     else:
         print("Draw")
+        return amount
 
 
 #Main Brain
+amount = 200
 os.system("cls")
 print(logo)
-cards =choiceofcards()
-print(f"Yours final hand is {cards[0]}")
-print(f"Dealer final hand is {cards[1]}")
-you_win =winner(cards[0],cards[1])
+print("Welcome to the table!")
+while amount>=100:
+    print(start_msg)
+    user_cards = []
+    dealer_cards = []
+    user_cards,dealer_cards =choiceofcards()
+    print(f"Yours final hand is {user_cards}")
+    print(f"Dealer final hand is {dealer_cards}")
+    amount =winner(user_cards,dealer_cards,amount)
+    print(f"You have {amount}")
 
 
 
