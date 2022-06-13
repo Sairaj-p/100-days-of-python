@@ -21,7 +21,7 @@ def check(start,skip,choice):
 while game_on:
     os.system("cls")
     print(Day_14_Data.logo)
-    skip = randint(1,3)
+    skip = randint(1,10)
     score += 1
     print(f"your score is :{score}")
     print(f"\n{data[start]['name']} is a {data[start]['description']} from {data[start]['country']}\n")
@@ -31,5 +31,5 @@ while game_on:
     choice = input("Who has more followers'a' or 'b' :").lower()
     game_on = check(start-skip,skip,choice)
 print("\nyour choice is wrong!")
-print(f"\nGame over your score is {score}")
+print(f"\nGame over your score is {score}\n\n")
 
