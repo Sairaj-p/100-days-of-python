@@ -32,6 +32,7 @@ def user_guess():
     print("______________________________________________")
     return False
 
+
 def difficulty():
     choice = input("Do you want to play 'easy' or 'hard'? :").lower()
     if choice == 'hard':

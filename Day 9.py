@@ -21,6 +21,7 @@ def new_bid():
     bid = int(input("Enter your bid :"))
     bides[name] = bid
 
+
 def winner():
     os.system("cls")
     highest_bid =0
@@ -30,6 +31,7 @@ def winner():
             highest_bid = bides[name]
             winner_name = name
     print(f" the winner is {winner_name} with the bid of ${highest_bid}")
+
 
 #main code
 os.system("cls")

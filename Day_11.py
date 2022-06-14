@@ -81,6 +81,7 @@ amount = 200
 os.system("cls")
 print(logo)
 print("Welcome to the table!")
+
 while amount>=100:
     print(start_msg)
     user_cards = []

@@ -7,6 +7,7 @@ from random import randint
 start = randint(0,10)
 game_on = True
 score =-1
+
 def check(start,skip,choice):
     if choice == 'a'and data[start]['follower_count']>data[start+skip]['follower_count']:
         print("Correct.")

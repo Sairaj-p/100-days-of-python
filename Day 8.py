@@ -21,6 +21,7 @@ a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
               88                                             
               88           
 """
+
 def encode(msg,shift):
     print("encode")
     cipher =""
@@ -53,7 +54,7 @@ repeat = True
 while repeat:
     direction = input("do you want to 'encode' or 'decode' ").lower()
     msg = input("Enter your message:").lower()
-    shift = int(input("Enter the shift :"))-1
+    shift = int(input("Enter the shift :"))
     if (direction == 'encode'):
         encode(msg,shift)
     elif direction == 'decode':

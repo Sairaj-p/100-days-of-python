@@ -84,6 +84,7 @@ result = []
 for letter in word:
     result += "_"
 print(logo)
+
 while count1 < len(word):
     count2 =0
     guess = input("Guess a letter: ").lower()
@@ -107,6 +108,7 @@ while count1 < len(word):
         if lives == 0:
             count1 = len(word)+1
     print(f"{' '.join(result)}")
+    
 if count1 == len(word):
     print("You won")
 else:

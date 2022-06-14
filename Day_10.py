@@ -1,12 +1,7 @@
 #Calculator
 import os
 #Material
-operation ={
-    "+":addition,
-    "-":subtraction,
-    "*":multiply,
-    "/":division
-}
+
 logo = """
  _____________________
 |  _________________  |
@@ -30,6 +25,7 @@ def addition(a):
      print( a ,'+', b )
      return  a+b 
 
+
 def subtraction(a):
     b = float(input("Second no:"))
     print(a ,'-', b)
@@ -38,20 +34,30 @@ def subtraction(a):
     else:
         return b-a
 
+
 def multiply(a):
     b= float(input("Second no:"))
     print(a ,'*',b)
     return a * b
+
 
 def division(a):
      b =float(input("Divisor:"))
      print(a ,'/',b)
      return a / b
 
+
+operation ={
+    "+":addition,
+    "-":subtraction,
+    "*":multiply,
+    "/":division
+}
+
 #Main Body
-os.system("cls")
-print(logo)
 while True:
+    os.system("cls")
+    print(logo)
     a = float(input("First no:"))
     cont = True
     while cont:
