@@ -27,6 +27,7 @@ MENU = {
         "cost": 3.0,
     }
 }
+profit =0
 conti = True
 coins =[0,0,0,0]
 ingredients ={
@@ -53,7 +54,10 @@ def check_material(order):
 
 
 def print_report():
-    print(ingredients)
+    global ingredients
+    print(f"Milk: {ingredients['milk']}ml")
+    print(f"Water: {ingredients['water']}ml")
+    print(f"Coffee: {ingredients['coffee']}gm")
 
 
 def coin_collecting():
@@ -66,13 +70,14 @@ def coin_collecting():
 
 
 def order(order,money):
-    global MENU,ingredients
+    global MENU,ingredients,profit
     for orders in MENU:
         if orders == order:
                 if money> MENU[order]["cost"]:
                     ingredients = final_order(order)
-                    print(ingredients)
-                    print(f"your change :{money - MENU[order]['cost']}")
+                    print(f"your change :{round(money - MENU[order]['cost'],2)}")
+                    profit+= MENU[order]['cost'] 
+                    print(f"\nHere id s your {order}")
                     return ingredients
                 else:
                     print("You have not given enought money to the machine")   
@@ -93,13 +98,13 @@ def final_order(order):
 
 while conti:
     print_report()
-    choice = input("espresso/cappuccino/latte")
+    choice = input("espresso/cappuccino/latte :")
     conti = check_material(choice)
     if conti:
         money = coin_collecting()
         ingredients = order(choice,money)
     else:
-        print("Machine is out of stock of materials please come back later!")
-
+        print("\n\nMachine is out of stock of materials please come back later!\n\n")
+print(f"Machine Profit ${profit}")
 
     
