@@ -22,7 +22,7 @@ def color():
 def draw():
     tin.pencolor(color())
     tin.pendown()
-    tin.forward(1)
+    tin.forward(0.1)
     tin.penup()
     tin.forward(30)
 
@@ -43,7 +43,7 @@ def left_side_turn():
 #Main Brain 
 if_right_side = True   
 for __ in range(0,26):
-    for _ in range(0,30):
+    for _ in range(0,31):
         draw()
     if if_right_side:
         right_side_turn()
