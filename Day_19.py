@@ -28,7 +28,7 @@ else:
     while race_on:
         for i in range(0,6):
             t = turtles[i]
-            t.forward(choice([0,10,20,30]))
+            t.forward(choice([0,5,10,15]))
             if t.xcor()>230:
                 race_on = False
                 winner =t.pencolor()
