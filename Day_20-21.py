@@ -16,7 +16,7 @@ exit = False
 class Snake:
     def __init__(self):
         self.snake_body = []
-        for i in range(0,10):
+        for i in range(0,3):
             s = Turtle(shape ="square")
             s.color("white")
             s.penup()
