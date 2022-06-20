@@ -1,7 +1,7 @@
 #Snake Game
 
 from turtle import Turtle,Screen
-import time
+from time import sleep
 from random import randint
 
 #setup
@@ -116,7 +116,7 @@ score = Score()
 screen.update()
 while not exit:
     screen.update()
-    time.sleep(0.1)
+    sleep(0.1)
     if snake.head.distance(food) <= 15:
         food.refresh()
         snake.add_segment()
