@@ -1,4 +1,4 @@
-#Snake Game
+#Snake Game with OOP
 
 from turtle import Turtle,Screen
 from time import sleep
