@@ -4,6 +4,7 @@ from turtle import Turtle,Screen
 from time import sleep
 from random import randint
 
+
 #setup
 screen = Screen()
 screen.bgcolor("black")
@@ -92,20 +93,26 @@ class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
+        with open("Data.txt",mode="r") as h_score:
+            self.high_score = int(h_score.read())
         self.hideturtle()
         self.goto(0,280)
         self.penup()
         self.color("white")
-        self.write(f"Score: {self.score} ",align ="center",font=("Courier",10,"normal"))
+
+        self.write(f"Score: {self.score}  High Score: {self.high_score}",align ="center",font=("Courier",10,"normal"))
         
     def refresh(self):
         self.clear()
         self.score += 1
-        self.write(f"Score: {self.score} ",align ="center",font=("Courier",10,"normal"))
+        self.write(f"Score: {self.score}  High score:{self.high_score}",align ="center",font=("Courier",10,"normal"))
 
     def game_over(self):
         self.clear()
         self.home()
+        if self.score > self.high_score:
+            with open("Data.txt",mode="w") as data:
+                data.write(f"{self.score}")
         self.write(f"Game Over",align ="center",font=("Courier",50,"normal"))
 
 
