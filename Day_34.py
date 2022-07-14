@@ -80,7 +80,7 @@ class QuizInterface():
             return True
         else:
             return False    
-            
+
         
 ques_bank =[]
 for _ in range(0,10):
